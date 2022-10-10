@@ -4,6 +4,7 @@ const session = require("express-session");
 const path = require("path");
 const ejs = require("ejs");
 
+const PORT = process.env.PORT || 3000;
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -90,6 +91,6 @@ app.get("/home", function (request, response) {
   response.end();
 });
 
-app.listen(3000, () => {
-  console.log("Server is up at 3000");
+app.listen(PORT, () => {
+  console.log("Server is up at", PORT);
 });
